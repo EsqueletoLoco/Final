@@ -1,0 +1,50 @@
+import discord
+
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'Ha iniciado sesión como {bot.user}')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Hola, riega a mis amigos, soy {bot.user}!')
+
+@bot.command()
+async def aho(ctx):
+    await ctx.send(f'La mayor parte de la electricidad y el calor funcionan con carbón, petróleo y gas. Para reducir el uso de energía reduciendo la calefacción y el aire acondicionado, cambiando a iluminación y electrodomésticos de bajo consumo y secando la ropa mojada en lugar de usarla en la secadora será suficiente.')
+
+@bot.command()
+async def des(ctx):
+    await ctx.send(f'Las carreteras del mundo están llenas de automóviles, la mayoría de los cuales funcionan con diésel o gasolina. Caminar o andar en bicicleta en lugar de conducir reduce las emisiones de gases de efecto invernadero y tiene beneficios para la salud y el fitness.')
+
+@bot.command()
+async def ver(ctx):
+    await ctx.send(f'Comer más verduras, frutas, cereales integrales, legumbres, nueces y semillas, y comer menos carne y productos lácteos puede reducir el impacto ambiental. La producción de alimentos de origen vegetal suele generar menos emisiones de gases de efecto invernadero y requiere menos energía, tierra y agua.')
+
+@bot.command()
+async def cons(ctx):
+    await ctx.send(f"Los aviones utilizan grandes cantidades de combustibles fósiles y, por tanto, emiten grandes cantidades de gases de efecto invernadero. Por lo tanto, reducir el número de vuelos es una de las formas más rápidas de reducir nuestro impacto medioambiental. Si es posible, reúnase en persona, tome un tren o conduzca largas distancias.")
+
+@bot.command()
+async def tir(ctx):
+    await ctx.send(f"El desperdicio de alimentos también aumenta los recursos, la energía, la producción, el transporte y la densidad de población. Y cuando los alimentos se descomponen en los vertederos, liberan metano, un potente gas de efecto invernadero. Así que usa lo que compras y ahorra en extras.")
+
+@bot.command()
+async def rrrr(ctx):
+    await ctx.send(f"Debido a que compramos productos electrónicos, ropa y otros bienes, emitimos carbono en cada parte de la cadena de valor, desde el abastecimiento hasta la fabricación y la entrega de los productos al mercado. Para proteger el clima, compra menos, compra de segunda mano, repara lo que puedas y recicla.")
+
+@bot.command()
+async def cam(ctx):
+    await ctx.send(f"Pregúntele a su empresa de servicios públicos si la energía de su hogar proviene de fuentes naturales, carbón o gas natural. Si es posible, procura que lo apuntes hacia la parte más alta, para ahorrar aire. O instale paneles solares en su techo para alimentar su hogar.")
+
+@bot.command()
+async def veh(ctx):
+    await ctx.send(f"Si estás pensando en comprar un coche, considera adquirir un modelo eléctrico, ya que cada vez se venden más modelos a precios más bajos. Aunque funcionan con electricidad producida a partir de combustibles fósiles, los coches eléctricos ayudan a reducir la contaminación del aire y producen menos emisiones de gases de efecto invernadero que los vehículos de gasolina o diésel.")
+
+bot.run("Tu Token")
